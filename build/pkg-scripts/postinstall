@@ -1,0 +1,9 @@
+#!/bin/sh
+#This is a sample preinstall or postinstall script.
+#Your logic goes here.
+#if [ your_logic_returns_false ]
+#then
+#     exit -1
+#fi
+echo "finish..."
+exit 0
