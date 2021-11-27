@@ -30,16 +30,30 @@ function createWindow() {
         {
             label: 'Edit',
             submenu: [
-                {role: 'undo'},
-                {role: 'redo'},
-                {type: 'separator'},
-                {role: 'cut'},
-                {role: 'copy'},
-                {role: 'paste'},
-                {role: 'selectall'},
+                {role: 'editMenu'},
+                {role: 'windowMenu'},
+                {role: 'togglefullscreen'},
                 {role: 'quit'}
             ]
-        }
+        },
+        {
+            label: 'Feature',
+            submenu: [
+                {
+                    label: 'home',
+                    click: () => {
+                        mainWindow.webContents.send('href', 'json-print');
+                    }
+                },
+                {
+                    label: 'decode',
+                    click: () => {
+                        mainWindow.webContents.send('href', 'url-print');
+                    }
+                }
+
+            ]
+        },
     ]
 
     const menu = Menu.buildFromTemplate(template)

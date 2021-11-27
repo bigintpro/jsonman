@@ -1,5 +1,5 @@
 {
-  "name": "jsoner",
+  "name": "jsonman",
   "version": "1.0.4",
   "author": "zhudesheng <154893323@qq.com>",
   "description": "free,security app for json format",
@@ -17,7 +17,7 @@
     "postinstall": ""
   },
   "build": {
-    "productName": "jsoner",
+    "productName": "jsonman",
     "appId": "com.saturday.jsonman",
     "directories": {
       "output": "build"
