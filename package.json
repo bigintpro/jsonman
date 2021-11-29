@@ -1,6 +1,6 @@
 {
   "name": "jsonman",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "zhudesheng <154893323@qq.com>",
   "description": "free,security app for json format",
   "license": "MIT",
@@ -64,6 +64,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "electron-find": "^1.0.7",
     "element-ui": "^2.15.6",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",

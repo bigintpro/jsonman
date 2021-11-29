@@ -22,7 +22,8 @@ body {
   padding: 0;
   width: 100%;
   /*height: 600px;*/
-  height: calc(98vh);
+  height: calc(100vh);
+  overflow-y: hidden;
 }
 
 #app {

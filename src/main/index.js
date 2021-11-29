@@ -1,4 +1,4 @@
-import {app, BrowserWindow, Menu, MenuItem} from 'electron'
+import {app, BrowserWindow, Menu, globalShortcut} from 'electron'
 import '../renderer/store'
 
 /**
@@ -40,13 +40,13 @@ function createWindow() {
             label: 'Feature',
             submenu: [
                 {
-                    label: 'home',
+                    label: 'json print',
                     click: () => {
                         mainWindow.webContents.send('href', 'json-print');
                     }
                 },
                 {
-                    label: 'decode',
+                    label: 'url decode | encode',
                     click: () => {
                         mainWindow.webContents.send('href', 'url-print');
                     }
@@ -65,20 +65,20 @@ function createWindow() {
     mainWindow.on('closed', () => {
         mainWindow = null
     })
+
+    mainWindow.on('focus', () => {
+        globalShortcut.register('CommandOrControl+F', function () {
+            if (mainWindow && mainWindow.webContents) {
+                mainWindow.webContents.send('on-find', '')
+            }
+        })
+    })
+    mainWindow.on('blur', () => {
+        globalShortcut.unregister('CommandOrControl+F')
+    })
+
+
 }
-
-
-// const menu = new Menu()
-// menu.append(new MenuItem({
-//     label: 'Electron',
-//     submenu: [{
-//         role: 'help',
-//         accelerator: process.platform === 'darwin' ? 'Alt+Cmd+I' : 'Alt+Shift+I',
-//         click: () => { console.log('Electron rocks!') }
-//     }]
-// }))
-//
-// Menu.setApplicationMenu(menu)
 
 
 app.on('ready', createWindow)
@@ -87,6 +87,7 @@ app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
         app.quit()
     }
+    globalShortcut.unregister('CommandOrControl+F')
 })
 
 app.on('activate', () => {
