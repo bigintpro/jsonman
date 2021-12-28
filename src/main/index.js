@@ -33,7 +33,14 @@ function createWindow() {
                 {role: 'editMenu'},
                 {role: 'windowMenu'},
                 {role: 'togglefullscreen'},
-                {role: 'quit'}
+                {role: 'quit'},
+                {
+                    label: 'find',
+                    accelerator: process.platform === 'darwin' ? 'Cmd+F' : 'Alt+F',
+                    click: () => {
+                        console.log('Electron rocks!')
+                    }
+                }
             ]
         },
         {
@@ -43,6 +50,12 @@ function createWindow() {
                     label: 'json print',
                     click: () => {
                         mainWindow.webContents.send('href', 'json-print');
+                    }
+                },
+                {
+                    label: 'c operator and priority print',
+                    click: () => {
+                        mainWindow.webContents.send('href', 'operate-priority-print');
                     }
                 },
                 {
@@ -57,6 +70,10 @@ function createWindow() {
     ]
 
     const menu = Menu.buildFromTemplate(template)
+    // menu.append(new MenuItem({
+    //     label: 'find u',
+    //     submenu: []
+    // }))
 
     Menu.setApplicationMenu(menu)
 
