@@ -1,15 +1,16 @@
 <template>
-  <div>
-    <el-table :data="tableData" height="1000" stripe :span-method="objectSpanMethod" border style="width: 100%; margin-top: 20px">
-      <el-table-column prop="priority" label="优先级" width="180">
+  <div class="container">
+    <el-table :data="tableData" height="98%" stripe :span-method="objectSpanMethod" border
+              style="width: 97%; height: 96%;  margin: 0 3% 2% 3%;font-size: 1rem;font-weight: bold;">
+      <el-table-column prop="priority" label="优先级" width="80">
       </el-table-column>
-      <el-table-column prop="operator" label="运算符">
+      <el-table-column prop="operator" label="运算符" >
       </el-table-column>
-      <el-table-column prop="meaning" label="含义">
+      <el-table-column prop="meaning" label="含义" >
       </el-table-column>
       <el-table-column prop="usage" label="使用形式">
       </el-table-column>
-      <el-table-column prop="direct" label="结合性">
+      <el-table-column prop="direct" label="结合性" >
       </el-table-column>
       <el-table-column prop="note" label="说明">
       </el-table-column>
@@ -23,7 +24,10 @@ export default {
   data() {
     return {
       rowCount: 0,
+      // 列展现字段
       colFields: ['priority', 'operator', 'meaning', 'usage', 'direct', 'note'],
+      // 需合并字段
+      mergeFields: ['priority'],
       spanArr: [],
       tableData: [
         {
@@ -424,7 +428,9 @@ export default {
 
           for (let j = 0; j < this.colFields.length; j++) {
             // 当前和上一次的一样
-            if (this.tableData[row][this.colFields[j]] === this.tableData[row - 1][this.colFields[j]]) {
+            if (this.tableData[row][this.colFields[j]] === this.tableData[row - 1][this.colFields[j]]
+                && this.mergeFields.includes(this.colFields[j]))
+            {
               let beforeItem = this.spanArr[(row - 1) * this.colFields.length + j];
               this.spanArr[row * this.colFields.length + j] = {
                 rowspan: 1 + beforeItem.rowspan,
@@ -475,5 +481,9 @@ export default {
 </script>
 
 <style scoped>
+.container{
+  width: 100%;
+  height: 100%;
+}
 
 </style>

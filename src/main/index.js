@@ -59,6 +59,12 @@ function createWindow() {
                     }
                 },
                 {
+                    label: 'ascii code print',
+                    click: () => {
+                        mainWindow.webContents.send('href', 'code-ascii');
+                    }
+                },
+                {
                     label: 'url decode | encode',
                     click: () => {
                         mainWindow.webContents.send('href', 'url-print');
