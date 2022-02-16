@@ -6,12 +6,18 @@ json formater，安全的json格式化工具
 + url编码和解码
 + url编码和解码新增智能切割
 + 运算符的结核性和优先性
++ ascii 码转换
 
 
 ## 待开发功能
 + xml格式解析
 + int最大值（数据类型最大值）
-+ ascii 码转换
++ json解析支持扁平格式
++ mysql，oracel关键字
+```
+{\"fid\":\"1478292080236175360\",\"originalFileName\":\"签名.png\",\"businessId\":\"1476371555268218880\",\"remark\":\"\",\"auditValue\":10,\"sid\":\"1478292081267974144\",\"storeFileName\":\"签名.png\",\"currentTime\":\"2022-01-06 17:38:39\",\"createBy\":\"zhengfapei\",\"createTime\":\"2022-01-04 17:07:52\",\"fileSize\":11966,\"appId\":10001,\"name\":\"郑法配\",\"businessType\":\"Approve\",\"fileType\":\"png\"}
+```
+
 
 
 
