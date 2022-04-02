@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import {JSONFormat} from '../../service/print';
-import {closeObj, openObj} from '../../service/open';
+import {JSONFormat} from "../../service/print";
+import {closeObj, openObj} from "../../service/open";
 
 export default {
-  name: "JsonPrint",
+  name: "DateTimePrint",
   data: function () {
     return {
       textarea1: "",
@@ -76,94 +76,4 @@ export default {
 
 <style scoped>
 
-</style>
-
-<style>
-.container{
-  width: 100%;
-  height: 100%;
-}
-
-.d1, .d2 {
-  display: inline-block;
-  width: 47%;
-  height: 92%;
-  /*border: solid 1px black;*/
-  float: left;
-}
-
-.d1 {
-  background-color: #e7edeb;
-  margin: 1% 0 1% 1%;
-  padding: 1%;
-}
-
-.d2 {
-  background-color: #e7edeb;
-  margin: 1% 1% 1% 0;
-  padding: 1%;
-}
-
-/* 字符图标*/
-.obj-open:before {
-  font-weight: normal;
-  font-style: normal;
-  content: "\e900";
-}
-/* 字符图标*/
-.array-open:before {
-  content: "\e901";
-}
-
-.json_input {
-  /*display: inline-block;*/
-  width: 100%;
-  height: 100%;
-}
-
-textarea::-webkit-input-placeholder{
-  /*margin-top: 2rem;*/
-  text-align: center;
-  /*height: 100%;*/
-  line-height: 50px
-}
-
-
-.json_output {
-  display: inline-block;
-  font-weight: bold;
-  font-size: 14px;
-  text-align: left;
-  /*border: solid 1px grey;*/
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  resize: none;
-  overflow: scroll;
-}
-.type-number {
-  color: #25aae2;
-}
-.type-string {
-  color: #3ab54a;
-}
-.type-null {
-  color: #f1592a;
-}
-.type-key {
-  color: #92278f;
-}
-.type-boolean {
-  color: #f98280;
-}
-.parse-fail{
-  color: red;
-}
-</style>
-<style>
-.json_input textarea {
-  width: 100%;
-  height: 100%;
-  min-height: 100%;
-}
 </style>

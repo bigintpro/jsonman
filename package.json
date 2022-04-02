@@ -64,6 +64,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "date": "^1.0.2",
     "electron-find": "^1.0.7",
     "element-ui": "^2.15.6",
     "vue": "^2.5.16",
