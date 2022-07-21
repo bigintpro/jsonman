@@ -261,6 +261,18 @@ export class JSONFormat {
         return build.str;
     }
 
+    /**
+     * trim {\" -> {"
+     * @param jsonStr
+     */
+    getExtraJSONStrFromEncodeJsonStr(jsonStr){
+        let result = "";
+        if(jsonStr && jsonStr.startsWith('{\\"')){
+            result = jsonStr.replaceAll('\\"','"')
+        }
+        return result;
+    }
+
 
 }
 

@@ -43,10 +43,15 @@ export default {
         return;
       }
       try {
-
-        let parse = JSON.parse(this.textarea1);
-
         let jsonFormat = new JSONFormat();
+
+        // trim {\" -> {"
+        // let jsonStr = jsonFormat.getExtraJSONStrFromEncodeJsonStr(this.textarea1)
+        if(!jsonStr){
+          this.textarea2 = `<span class="parse-fail">json 为空</span>`;
+          return;
+        }
+        let parse = JSON.parse(jsonStr);
 
         this.textarea2 = jsonFormat.getJSONFormattedHtmlStr(parse);
       }catch (e) {
