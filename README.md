@@ -16,6 +16,7 @@ json formater，安全的json格式化工具
 + mysql，oracel关键字
 + base64解码和编码
 + 时间格式转换
++ html table -> markdown table
 ```
 {\"fid\":\"1478292080236175360\",\"originalFileName\":\"签名.png\",\"businessId\":\"1476371555268218880\",\"remark\":\"\",\"auditValue\":10,\"sid\":\"1478292081267974144\",\"storeFileName\":\"签名.png\",\"currentTime\":\"2022-01-06 17:38:39\",\"createBy\":\"zhengfapei\",\"createTime\":\"2022-01-04 17:07:52\",\"fileSize\":11966,\"appId\":10001,\"name\":\"郑法配\",\"businessType\":\"Approve\",\"fileType\":\"png\"}
 ```
