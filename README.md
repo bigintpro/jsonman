@@ -7,10 +7,9 @@ json formater，安全的json格式化工具
 + url编码和解码新增智能切割
 + 运算符的结核性和优先性
 + ascii 码转换
-
++ xml格式解析
 
 ## 待开发功能
-+ xml格式解析
 + int最大值（数据类型最大值）
 + json解析支持扁平格式
 + mysql，oracel关键字
